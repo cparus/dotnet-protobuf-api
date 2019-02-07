@@ -1,8 +1,8 @@
 # Intro
-This is research project is using protobufs in C# and dotnet core WebAPI. The project is using a library called protobuf-net that follows the typical .NET patterns.
+This is research project is using protobufs in C# and .NET Core WebAPI. The project is using a library called protobuf-net that follows the typical .NET patterns.
  https://github.com/mgravell/protobuf-net
 
-# Set up environment
+# Install .NET
 Download .NET Core SDK 
 https://dotnet.microsoft.com/download
 
