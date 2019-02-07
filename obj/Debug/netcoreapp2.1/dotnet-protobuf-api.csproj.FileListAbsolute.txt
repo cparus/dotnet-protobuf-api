@@ -1,0 +1,14 @@
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/bin/Debug/netcoreapp2.1/dotnet-protobuf-api.deps.json
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/bin/Debug/netcoreapp2.1/dotnet-protobuf-api.runtimeconfig.json
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/bin/Debug/netcoreapp2.1/dotnet-protobuf-api.runtimeconfig.dev.json
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/bin/Debug/netcoreapp2.1/dotnet-protobuf-api.dll
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/bin/Debug/netcoreapp2.1/dotnet-protobuf-api.pdb
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/obj/Debug/netcoreapp2.1/dotnet-protobuf-api.csprojAssemblyReference.cache
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/obj/Debug/netcoreapp2.1/dotnet-protobuf-api.csproj.CoreCompileInputs.cache
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/obj/Debug/netcoreapp2.1/dotnet-protobuf-api.RazorAssemblyInfo.cache
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/obj/Debug/netcoreapp2.1/dotnet-protobuf-api.RazorAssemblyInfo.cs
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/obj/Debug/netcoreapp2.1/dotnet-protobuf-api.AssemblyInfoInputs.cache
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/obj/Debug/netcoreapp2.1/dotnet-protobuf-api.AssemblyInfo.cs
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/obj/Debug/netcoreapp2.1/dotnet-protobuf-api.RazorTargetAssemblyInfo.cache
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/obj/Debug/netcoreapp2.1/dotnet-protobuf-api.dll
+/Users/cam/Documents/dev/tfs/dotnet-protobuf-api/obj/Debug/netcoreapp2.1/dotnet-protobuf-api.pdb
