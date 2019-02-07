@@ -14,12 +14,17 @@ namespace dotnet_protobuf_api.Controllers
     public class ProtobufsController : ControllerBase
     {
         [HttpGet("SimpleProtobuf")]
-        public IActionResult Get()
+        public IActionResult SimpleProtobuf()
         {
             return new ObjectResult(ProtobufSerilization.SimpleProtobuf());
         }
-    }
 
+        [HttpGet("ProtobufList")]
+        public IActionResult ProtobufList()
+        {
+            return new ObjectResult(ProtobufSerilization.ProtobufList());
+        }
+    }
 
     public class ProtobufSerilization
     {
@@ -29,9 +34,51 @@ namespace dotnet_protobuf_api.Controllers
             simplePB.String1 = "HELLO";
             simplePB.String2 = "WORLD";
 
-            byte[] objToSerialize = TCSerialization(simplePB);
+            return TCSerialization(simplePB);
+        }
 
-            return objToSerialize;
+        //returning data in binary cuts payload size almost in half
+        public static object ProtobufList()
+        {
+            bool asJSON = true;
+            var objectList = new List<ProtoModel>();
+            ProtoModel protoModel = new ProtoModel();
+            for (int i = 0; i < 100000; i++)
+            {
+                protoModel.Address = "1111111 Uh YUH";
+                protoModel.FirstName = "GUY";
+                protoModel.LastName = "HANDS";
+                protoModel.Id = 33;
+                protoModel.TestNum = 5434;
+                objectList.Add(protoModel);
+            }
+            if (asJSON)
+            {
+                //size: 8.49MB
+                return objectList;
+            }
+            else
+            {
+                //size: 4.45MB
+                return TCSerializationList(objectList);
+            }
+        }
+
+        // TODO combine serializtions methods into one method
+        public static byte[] TCSerializationList(List<ProtoModel> list)
+        {
+            try
+            {
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    Serializer.Serialize<List<ProtoModel>>(stream, list);
+                    return stream.ToArray();
+                }
+            }
+            catch
+            {
+                throw;
+            }
         }
 
 
