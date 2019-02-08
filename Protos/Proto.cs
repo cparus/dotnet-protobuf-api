@@ -21,16 +21,5 @@ namespace dotnet_protobuf_api.Protos
         [ProtoMember(5)]
         public int TestNum { get; set; }
     }
-
-    public class JSONModel
-    {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-
-        public int TestNum { get; set; }
-    }
-
 }
 

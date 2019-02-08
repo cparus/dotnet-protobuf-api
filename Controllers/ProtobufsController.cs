@@ -22,7 +22,15 @@ namespace dotnet_protobuf_api.Controllers
         [HttpGet("ProtobufList")]
         public IActionResult ProtobufList()
         {
-            return new ObjectResult(ProtobufSerilization.ProtobufList());
+            bool asJSON = false;
+            return new ObjectResult(ProtobufSerilization.GetList(asJSON));
+        }
+
+        [HttpGet("JSONList")]
+        public IActionResult JSONList()
+        {
+            bool asJSON = true;
+            return new ObjectResult(ProtobufSerilization.GetList(asJSON));
         }
     }
 
@@ -38,9 +46,8 @@ namespace dotnet_protobuf_api.Controllers
         }
 
         //returning data in binary cuts payload size almost in half
-        public static object ProtobufList()
+        public static object GetList(bool asJSON)
         {
-            bool asJSON = true;
             var objectList = new List<ProtoModel>();
             ProtoModel protoModel = new ProtoModel();
             for (int i = 0; i < 100000; i++)
