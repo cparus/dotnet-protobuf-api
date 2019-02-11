@@ -19,6 +19,7 @@ namespace dotnet_protobuf_api.Controllers
             return new ObjectResult(ProtobufSerilization.SimpleProtobuf());
         }
 
+        //size 6.01 MB
         [HttpGet("ProtobufList")]
         public Task ProtobufList()
         {
@@ -28,6 +29,7 @@ namespace dotnet_protobuf_api.Controllers
             return Response.Body.WriteAsync(byteArr, 0, byteArr.Length);
         }
 
+        //size 15.28 MB
         [HttpGet("JSONList")]
         public IActionResult JSONList()
         {
@@ -52,7 +54,7 @@ namespace dotnet_protobuf_api.Controllers
         {
             var objectList = new List<ProtoModel>();
             ProtoModel protoModel = new ProtoModel();
-            for (int i = 0; i < 100000; i++)
+            for (int i = 0; i < 180000; i++)
             {
                 protoModel.Address = "1111111 Uh YUH";
                 protoModel.FirstName = "GUY";
@@ -63,12 +65,10 @@ namespace dotnet_protobuf_api.Controllers
             }
             if (asJSON)
             {
-                //size: 8.49MB
                 return objectList;
             }
             else
             {
-                //size: 3.3MB
                 return TCSerializationList(objectList);
             }
         }
