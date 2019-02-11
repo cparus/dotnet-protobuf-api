@@ -20,10 +20,12 @@ namespace dotnet_protobuf_api.Controllers
         }
 
         [HttpGet("ProtobufList")]
-        public IActionResult ProtobufList()
+        public Task ProtobufList()
         {
             bool asJSON = false;
-            return new ObjectResult(ProtobufSerilization.GetList(asJSON));
+            var byteArr = ProtobufSerilization.GetList(asJSON) as byte[];
+            Response.ContentType = "application/octet-stream";
+            return Response.Body.WriteAsync(byteArr, 0, byteArr.Length);
         }
 
         [HttpGet("JSONList")]
@@ -66,7 +68,7 @@ namespace dotnet_protobuf_api.Controllers
             }
             else
             {
-                //size: 4.45MB
+                //size: 3.3MB
                 return TCSerializationList(objectList);
             }
         }

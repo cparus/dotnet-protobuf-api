@@ -39,6 +39,11 @@ namespace dotnet_protobuf_api
             {
                 app.UseHsts();
             }
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
 
             app.UseHttpsRedirection();
             app.UseMvc();
