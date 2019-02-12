@@ -49,6 +49,7 @@ namespace dotnet_protobuf_api.Controllers
             return TCSerialization(simplePB);
         }
 
+        //returning data in binary cuts payload size almost in half
         public static object GetList(bool asJSON)
         {
             var objectList = new List<JabroniModel>();
@@ -68,27 +69,9 @@ namespace dotnet_protobuf_api.Controllers
             }
             else
             {
-                return TCSerializationList(objectList);
+                return TCSerialization(objectList);
             }
         }
-
-        // TODO combine serializtions methods into one method
-        public static byte[] TCSerializationList(List<JabroniModel> list)
-        {
-            try
-            {
-                using (MemoryStream stream = new MemoryStream())
-                {
-                    Serializer.Serialize<List<JabroniModel>>(stream, list);
-                    return stream.ToArray();
-                }
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
 
         static byte[] TCSerialization(object obj)
         {
