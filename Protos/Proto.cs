@@ -5,7 +5,7 @@ using System;
 namespace dotnet_protobuf_api.Protos
 {
     [ProtoContract]
-    public class ProtoModel
+    public class JabroniModel
     {
         [ProtoMember(1)]
         public int Id { get; set; }
