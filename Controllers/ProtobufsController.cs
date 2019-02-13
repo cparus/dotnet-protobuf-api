@@ -53,8 +53,8 @@ namespace dotnet_protobuf_api.Controllers
 
         public static object GetList(bool asJSON)
         {
-            var objectList = new List<TestModel>();
-            TestModel protoModel = new TestModel();
+            var objectList = new List<ProtoModel>();
+            ProtoModel protoModel = new ProtoModel();
             for (int i = 0; i < 180000; i++)
             {
                 protoModel.Address = "1111111 Uh YUH";
