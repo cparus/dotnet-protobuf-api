@@ -8,7 +8,7 @@ https://dotnet.microsoft.com/download
 
 
 # Running Project
-Run project with 'dotnet run' command.
+Run project with `dotnet run` command.
 
 # Routes
 `http://localhost:5000/api/Protobufs/SimpleProtobuf` - returns byte array. Client must decode the Uint8 and mirror the schema found in ./Protos/SimpleProto.
