@@ -14,18 +14,20 @@ namespace dotnet_protobuf_api.Controllers
     public class ProtobufsController : ControllerBase
     {
         [HttpGet("SimpleProtobuf")]
-        public IActionResult SimpleProtobuf()
+        [Produces("application/octet-stream")]
+        public Task SimpleProtobuf()
         {
-            return new ObjectResult(ProtobufSerilization.SimpleProtobuf());
+            var byteArr = ProtobufSerilization.SimpleProtobuf();
+            return Response.Body.WriteAsync(byteArr, 0, byteArr.Length);
         }
 
         //size 6.01 MB
         [HttpGet("ProtobufList")]
+        [Produces("application/octet-stream")]
         public Task ProtobufList()
         {
             bool asJSON = false;
             var byteArr = ProtobufSerilization.GetList(asJSON) as byte[];
-            Response.ContentType = "application/octet-stream";
             return Response.Body.WriteAsync(byteArr, 0, byteArr.Length);
         }
 
