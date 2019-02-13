@@ -11,9 +11,9 @@ https://dotnet.microsoft.com/download
 Run project with 'dotnet run' command.
 
 # Routes
-'http://localhost:5000/api/Protobufs/SimpleProtobuf' - returns byte array. Client must decode the Uint8 and mirror the schema found in ./Protos/SimpleProto.
+`http://localhost:5000/api/Protobufs/SimpleProtobuf` - returns byte array. Client must decode the Uint8 and mirror the schema found in ./Protos/SimpleProto.
 
-'http://localhost:5000/api/Protobufs/ProtobufList' - returns byte array. When this is decoded properly it will contain a list of about 180,000 records. On client side the schema found in ./Protos/ProtoModel should be wrapped in another message to decode the list. 
+`http://localhost:5000/api/Protobufs/ProtobufList` - returns byte array. When this is decoded properly it will contain a list of about 180,000 records. On client side the schema found in ./Protos/ProtoModel should be wrapped in another message to decode the list. 
 
 message ProtoModel {
   int32 Id = 1;
@@ -28,5 +28,5 @@ message ProtoModelList {
 }
 
 
-'http://localhost:5000/api/Protobufs/JSONList' - returns JSON representation of the data returned in ProtobufList. Compare this route with /ProtobufList to see optimization achieved with protobufs.
+`http://localhost:5000/api/Protobufs/JSONList` - returns JSON representation of the data returned in ProtobufList. Compare this route with /ProtobufList to see optimization achieved with protobufs.
 
