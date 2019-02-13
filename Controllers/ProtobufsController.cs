@@ -49,11 +49,10 @@ namespace dotnet_protobuf_api.Controllers
             return TCSerialization(simplePB);
         }
 
-        //returning data in binary cuts payload size almost in half
         public static object GetList(bool asJSON)
         {
-            var objectList = new List<JabroniModel>();
-            JabroniModel protoModel = new JabroniModel();
+            var objectList = new List<TestModel>();
+            TestModel protoModel = new TestModel();
             for (int i = 0; i < 180000; i++)
             {
                 protoModel.Address = "1111111 Uh YUH";
